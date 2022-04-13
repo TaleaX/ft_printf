@@ -21,23 +21,42 @@ static void	write_i(va_list arg)
 	ft_putnbr_fd(i, 1);
 }
 
-static void	write_c(char c, va_list arg)
+static void	write_c(va_list arg)
 {
+	char	c;
+
 	c = (char)va_arg(arg, int);
 	write(1, &c, 1);
+}
+
+static void	write_s(va_list arg)
+{
+	char	*c;
+
+	c = va_arg(arg, char *);
+	printf("%d\n", ft_strlen(c));
+	ft_putstr_fd(c, 1);
+}
+
+static void	write_u(va_list arg)
+{
+	unsigned int ui;
+
+	ui = (unsigned int) va_arg(arg, int);
+	ft_putnbr_fd(ui, 1);
 }
 
 void	ft_process_arg(char c, va_list arg)
 {
 	if (c == 'c')
-		write_c(c, arg);
-	/*if (c == 's')
-		write_s(c, arg);*/
+		write_c(arg);
+	if (c == 's')
+		write_s(arg);
 	if (c == 'i' || c == 'd')
 		write_i(arg);
-	/*if (c == 'u')
-		write_u(c, arg);
-	if (c == 'p')
+	if (c == 'u')
+		write_u(arg);
+	/*if (c == 'p')
 		write_p(c, arg);
 	if (c == 'x')
 		write_x(c, arg);

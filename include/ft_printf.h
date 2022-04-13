@@ -14,11 +14,8 @@
 # define FT_PRINTF_H
 # include <stdarg.h>
 # include <unistd.h>
-
-void	ft_putnbr_fd(int n, int fd);
+# include "libft.h"
 void	ft_process_arg(char c, va_list arg);
-void	write_c(char c, va_list arg);
-void	write_i(va_list arg);
 int		ft_printf(const char *str, ...);
 
 #endif

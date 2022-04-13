@@ -39,12 +39,13 @@ int main()
 
 	//testing for string
 	ret = printf("hello = %s, empty = %s, yay = %s\n", "Hello", "\0hello", "Yay");
-
+	ret = ft_printf("hello = %s, empty = %s, yay = %s\n", "Hello", "\0hello", "Yay");
 	//testing for pointers
 	ret = printf("char * = %p, int * = %p, double * = %p, null = %p\n", c, i, d, NULL);
 
 	//testing for unsigned decimal
 	ret = printf("udec = %u, uhex = %u, uoct = %u, ?minus = %u\n", ui, 0xA4, 010, -1);
+	ret = ft_printf("udec = %u, uhex = %u, uoct = %u, ?minus = %u\n", ui, 0xA4, 010, -1);
 
 	//testing for hexadecimals lowercase
 	ret = printf("dec = %x, hex = %x, oct = %x, minus = %x\n",2147483647, 0xA4, 012, -12);
