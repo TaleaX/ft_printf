@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:02:55 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/12 18:36:47 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/13 12:30:32 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	write_s(va_list arg)
 	char	*c;
 
 	c = va_arg(arg, char *);
-	printf("%d\n", ft_strlen(c));
+	printf("%zu\n", ft_strlen(c));
 	ft_putstr_fd(c, 1);
 }
 

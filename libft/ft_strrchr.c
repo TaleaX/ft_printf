@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 16:56:38 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/12 18:36:00 by tdehne           ###   ########.fr       */
+/*   Created: 2022/03/26 15:12:25 by tdehne            #+#    #+#             */
+/*   Updated: 2022/04/08 11:29:03 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft.h"
-void	ft_process_arg(char c, va_list arg);
-int		ft_printf(const char *str, ...);
+#include "libft.h"
 
-#endif
+char	*ft_strrchr(const char *s, int c)
+{
+	long long	len;
+
+	len = ft_strlen(s);
+	while (len >= 0)
+	{
+		if (s[len] == (char) c)
+			return ((char *)(s + len));
+		len--;
+	}
+	return (NULL);
+}
