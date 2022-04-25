@@ -6,7 +6,7 @@ L_SRC=libft/ft_isalpha.c libft/ft_isdigit.c libft/ft_isalnum.c libft/ft_isascii.
 	libft/ft_calloc.c libft/ft_strdup.c libft/ft_substr.c libft/ft_strjoin.c libft/ft_strtrim.c libft/ft_split.c libft/ft_itoa.c \
 	libft/ft_strmapi.c libft/ft_striteri.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_memcmp.c \
 	libft/ft_strnstr.c
-SRC=ft_printf.c ft_process_arg.c test_printf.c
+SRC=ft_printf.c ft_write_arg.c ft_utils.c test.c
 BONUS=libft/ft_lstnew.c libft/ft_lstadd_front.c libft/ft_lstsize.c libft/ft_lstlast.c libft/ft_lstadd_back.c libft/ft_lstdelone.c libft/ft_lstclear.c \
 	libft/ft_lstiter.c libft/ft_lstmap.c
 OBJ=$(SRC:.c=.o)
@@ -17,8 +17,9 @@ NAME=libftprintf.a
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(OBJ) -o run
+	$(CC) $(OBJ) $(L_SRC) -o run
 	ar rc $(NAME) $(OBJ)
+	rm -f *.o
 
 bonus: $(B_OBJ) $(OBJ)
 	ar rc $(NAME) $(OBJ) $(B_OBJ)
