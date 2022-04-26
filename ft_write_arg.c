@@ -6,20 +6,12 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:02:55 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/25 13:45:46 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/26 15:58:09 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
-
-/*int	write_i(va_list arg)
-{
-	int	i;
-
-	i = va_arg(arg, int);
-	return (putnbr_count(i));
-}*/
 
 int write_c_i(va_list arg, char c)
 {
