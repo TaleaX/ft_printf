@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 09:29:24 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/21 17:33:48 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:03:32 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	log_10(unsigned int num)
 {
-	int		counter;
+	unsigned int	counter;
 
 	counter = 0;
 	num /= 10;
@@ -84,7 +84,7 @@ int	putnbr_count(int n)
 	return (counter + minus);
 }
 
-void write_hex(unsigned long long num, char *base, int *counter)
+void	write_hex(unsigned long long num, char *base, int *counter)
 {
 	unsigned int	rem;
 

@@ -6,14 +6,13 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:02:55 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/26 15:58:09 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:23:17 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
-int write_c_i(va_list arg, char c)
+int	write_c_i(va_list arg, char c)
 {
 	int	i;
 
@@ -36,7 +35,7 @@ int	write_s(va_list arg)
 
 int	write_u(va_list arg)
 {
-	unsigned int ui;
+	unsigned int	ui;
 
 	ui = va_arg(arg, unsigned int);
 	return (putuint_fd(ui, 1));
@@ -50,7 +49,7 @@ int	write_p(va_list arg, char *base)
 	ptr = va_arg(arg, uintptr_t);
 	if (!ptr)
 	{
-		return(write(1, "(nil)", 5));
+		return (write(1, "(nil)", 5));
 	}
 	counter = 0;
 	write(1, "0x", 2);
@@ -58,7 +57,7 @@ int	write_p(va_list arg, char *base)
 	return (counter + 2);
 }
 
-int write_xX(va_list arg, char *base)
+int	write_x_uppx(va_list arg, char *base)
 {
 	unsigned int	num;
 	int				counter;

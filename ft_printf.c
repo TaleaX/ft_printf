@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 16:31:10 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/21 17:29:18 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/27 17:23:33 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static int	ft_process_arg(char c, va_list arg)
 	if (c == 'p')
 		return (write_p(arg, "0123456789abcdef"));
 	if (c == 'x')
-		return (write_xX(arg, "0123456789abcdef"));
+		return (write_x_uppx(arg, "0123456789abcdef"));
 	if (c == 'X')
-		return (write_xX(arg, "0123456789ABCDEF"));
+		return (write_x_uppx(arg, "0123456789ABCDEF"));
 	if (c == '%')
 		return (write(1, "%%", 1));
 	return (0);
@@ -46,7 +46,7 @@ int	ft_printf(const char *str, ...)
 			counter--;
 			if (!*str)
 				break ;
-			counter+=ft_process_arg(*str, argptr);
+			counter += ft_process_arg(*str, argptr);
 		}
 		else
 			write(1, str, 1);
