@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 16:56:38 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/27 17:57:24 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/28 16:20:38 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdint.h>
-# include "libft/libft.h"
 
 int		putuint_fd(unsigned int n, int fd);
 int		ft_printf(const char *str, ...);

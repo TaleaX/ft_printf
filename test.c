@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:18:21 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/26 15:59:14 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/28 16:45:51 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,21 @@ int	main(void)
 	double			*d;
 	unsigned int 	ui;
 	int				l;
+	int				num;
 
 	ui = 4294967295;
 	c = (char *)malloc(sizeof(char) * 1);
 	i = (int *)malloc(sizeof(int) * 1);
 	d = (double *)malloc(sizeof(double) * 1);
 	l = 2147483647;
-
+	num = 2147483647;
+	
 	printf("Legende:\ngI = greatest Integer\nsI = smallest INteger\nA = Ascii\neA = extended Ascii\n\n");
 	//TESTING FOR integers
 	printf("\nTESTING FOR integers\n");
-	ret = printf("gI = %i, sI = %i, H = %i, O = %i, IOverflow = %i, 0 = %i, -0 = %i l\n", 2147483647, -2147483647, 0xA4, 010, l + 1, -0, 0);
+	ret = printf("gI = %i, sI = %i, H = %i, O = %i, IOverflow = %i, 0 = %i, -0 = %i l \n", 2147483647, -2147483647, 0xA4, 010, l + 1, -0, 0);
 	printf("ret i = %d\n", ret);
-	ret = ft_printf("gI = %i, sI = %i, H = %i, O = %i, IOverflow = %i, 0 = %i, -0 = %i l\n", 2147483647, -2147483647, 0xA4, 010, l + 1, -0, 0);
+	ret = ft_printf("gI = %i, sI = %i, H = %i, O = %i, IOverflow = %i, 0 = %i, -0 = %i l \n", 2147483647, -2147483647, 0xA4, 010, l + 1, -0, 0);
 	printf("ret i = %d\n", ret);
 
 	printf("\nTESTING FOR decimals\n");
@@ -53,9 +55,9 @@ int	main(void)
 
 	//TESTING FOR string
 	printf("\nTESTING FOR strings\n");
-	ret = printf("Hello = %s, empty = %s, Yay = %s\n", "Hello", "\0hello", "Yay");
+	ret = printf("Hello = %s, empty = %s, Yay = %s, NULL = %s\n", "Hello", "\0hello", "Yay", NULL);
 	printf("ret str = %d\n", ret);
-	ret = ft_printf("Hello = %s, empty = %s, Yay = %s\n", "Hello", "\0hello", "Yay");
+	ret = ft_printf("Hello = %s, empty = %s, Yay = %s, NULL = %s\n", "Hello", "\0hello", "Yay", NULL);
 	printf("ret str = %d\n", ret);
 
 	//TESTING FOR pointers
@@ -84,6 +86,21 @@ int	main(void)
 	ret = printf("dec = %X, hex = %X, oct = %X, minus = %X, greatest ui = %X, greatest ui + 1 = %X\n",2147483647, 0xA4, 012, 2, ui, ui + 1);
 	printf("ret hex = %d\n", ret);
 	ret = ft_printf("dec = %X, hex = %X, oct = %X, minus = %X, greatest ui = %X, greatest ui + 1 = %X\n",2147483647, 0xA4, 012, 2, ui, ui + 1);
+	printf("ret hex = %d\n", ret);
+
+	//testing for multiple different args
+	printf("\nTESTING FOR multiple\n");
+	printf("\nTESTING FOR multiple\n");
+	printf("\nTESTING FOR multiple\n");
+	printf("\nTESTING FOR multiple\n");
+	printf("\nTESTING FOR multiple\n");
+	ret = printf("dec = %d, ptr = %p, hex up = %X, hex = %x, str = %s, char = %c\n",2147483647, d, 012, 2, "yay", 'c');
+	printf("ret hex = %d\n", ret);
+	ret = ft_printf("dec = %d, ptr = %p, hex up = %X, hex = %x, str = %s, char = %c\n",2147483647, d, 012, 2, "yay", 'c');
+	printf("ret hex = %d\n", ret);
+	ret = printf("Mix:%d%p%X%x%s%c\n",2147483647, d, 012, 2, "yay", 'c');
+	printf("ret hex = %d\n", ret);
+	ret = ft_printf("Mix:%d%p%X%x%s%c\n",2147483647, d, 012, 2, "yay", 'c');
 	printf("ret hex = %d\n", ret);
 
 	ret = printf(" ");

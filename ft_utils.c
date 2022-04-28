@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 09:29:24 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/27 17:03:32 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/28 16:53:45 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,16 @@ int	putnbr_count(int n)
 
 	num_long = (long) n;
 	counter = 0;
-	exp = log_10(num_long);
 	minus = 0;
+	if (num_long < 0)
+	{
+		num_long = -num_long;
+		write(1, "-", 1);
+		minus = 1;
+	}
+	exp = log_10(num_long);
 	while (counter <= exp)
 	{
-		if (num_long < 0)
-		{
-			num_long = -num_long;
-			write(1, "-", 1);
-			minus = 1;
-		}
 		digit = ((num_long / pow_of(10, exp - counter)) % 10) + 48;
 		write(1, &digit, 1);
 		counter += 1;

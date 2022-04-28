@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:02:55 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/27 17:23:17 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/28 16:47:20 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	write_s(va_list arg)
 	char	*str;
 
 	str = va_arg(arg, char *);
+	if (!str)
+		return (write(1, "(null)", 6));
 	return (write(1, str, ft_strlen(str)));
 }
 
@@ -49,7 +51,7 @@ int	write_p(va_list arg, char *base)
 	ptr = va_arg(arg, uintptr_t);
 	if (!ptr)
 	{
-		return (write(1, "(nil)", 5));
+		return (write(1, "0x0", 3));
 	}
 	counter = 0;
 	write(1, "0x", 2);
