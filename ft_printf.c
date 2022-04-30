@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 16:31:10 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/27 17:23:33 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/30 14:38:43 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_process_arg(char c, va_list arg)
 	if (c == 'X')
 		return (write_x_uppx(arg, "0123456789ABCDEF"));
 	if (c == '%')
-		return (write(1, "%%", 1));
+		return (write(1, "%", 1));
 	return (0);
 }
 
