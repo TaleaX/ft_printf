@@ -6,7 +6,7 @@
 /*   By: tdehne <tdehne@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 17:02:55 by tdehne            #+#    #+#             */
-/*   Updated: 2022/04/28 16:47:20 by tdehne           ###   ########.fr       */
+/*   Updated: 2022/04/30 15:07:07 by tdehne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	write_u(va_list arg)
 
 int	write_p(va_list arg, char *base)
 {
-	uintptr_t	ptr;
-	int			counter;
+	unsigned long long	ptr;
+	int					counter;
 
-	ptr = va_arg(arg, uintptr_t);
+	ptr = va_arg(arg, unsigned long long);
 	if (!ptr)
 	{
 		return (write(1, "0x0", 3));
